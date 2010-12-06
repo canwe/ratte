@@ -1,0 +1,74 @@
+#labels Featured,Phase-Deploy
+
+= 如何编译代码？ =
+
+
+== 环境 ==
+# Java
+需要Java SDK 1.6
+下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+# Groovy
+需要安装Groovy 1.7.5
+下载地址：http://groovy.codehaus.org/Download
+
+# Google App Engine SDK
+需要安装Google App Engine SDK for Java 1.3.8
+下载地址：http://code.google.com/appengine/downloads.html
+
+
+# 编译
+将下载的ratte-x.x-src.zip文件解压至某个目录下，比如ratte，
+目录结构如下所示：
+---ratte
+  |
+  |---- docs
+  |---- src
+  |---- war
+        |--- css
+        |--- images
+        |--- js
+        |--- WEB-INF
+        |--- xxx...
+
+
+通过命令行进入根目录下，
+{{{
+> groovy build.groovy
+}}}
+
+这样编译后的class将会放到WEB-INF/classes下，
+如果没有错误，可以接着下一步。
+
+# 修改配置
+打开WEB-INF/config.groovy文件
+// twitter oauth
+{{{
+twitter {
+    username = "rainboyan"
+	consumer.key = "5xEg1VuinKkKiwK4jkEUA"
+	consumer.secret = "aTOmGbKuinblP5jLzhzHDsb95LpVBSf3vCFil0inyT"
+    oauth_token = "45569022-EH78EcCopnhuyTR3qMF1jAsIDRFFV6d4T1VWwLwDs"
+    oauth_token_secret = "gQbNYrTsfEGTVRWVVBLeNh1RlFpOCUYdFdkoJAqwEIa"
+}
+}}}
+替换掉你自己twitter的 username以及申请的app相关oauth参数。
+
+修改application的ID
+打开WEB-INF/appengine-web.xml，修改第二行
+{{{
+    <application>rainboyan</application>
+    
+    <version>1</version>
+}}}
+
+# 部署
+{{{
+> appcfg.cmd update war
+}}}
+
+将会提示输入GAE应用的Gmail账号，输入密码后，如果网络一切正常，将会部署成功。
+
+这事你可以打开浏览器：http://app-id.appspot.com/
+
+如果你下载的是ratter-x.x.war，那么跳过编译环节，直接上传即可。
