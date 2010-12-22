@@ -55,7 +55,7 @@ twitter {
 }}}
 替换掉你自己twitter的 username以及申请的app相关oauth参数。
 
-另外，如果你有sina微博和豆瓣账号，同样也先申请App Key，并且验证通过获得Access Token，更新如下，这个是用来同步twitter到国内账号的。如果不需要，请删除掉配置。也行下个版本，不需要再自己申请了，直接使用我提供的。
+另外，如果你有sina微博和豆瓣账号，同样也先申请App Key，并且验证通过获得Access Token，更新如下，这个是用来同步twitter到国内账号的。如果不需要，请删除掉配置。也许下个版本，不需要再自己申请了，直接使用我提供的。
 {{{
 sina {
     oauth.consumer_key = "23708456"
