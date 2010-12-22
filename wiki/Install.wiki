@@ -16,9 +16,10 @@
 下载地址：http://code.google.com/appengine/downloads.html
 
 
-# 编译
+== 编译 ==
 将下载的ratte-x.x-src.zip文件解压至某个目录下，比如ratte，
 目录结构如下所示：
+{{{
 ---ratte
   |
   |---- docs
@@ -30,6 +31,7 @@
         |--- WEB-INF
         |--- xxx...
 
+}}}
 
 通过命令行进入根目录下，
 {{{
@@ -79,7 +81,7 @@ douban {
     <version>1</version>
 }}}
 
-# 部署
+== 部署 ==
 {{{
 > appcfg.cmd update war
 }}}
