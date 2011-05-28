@@ -8,11 +8,11 @@
 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 # Groovy
-需要安装Groovy 1.7.5
+需要安装Groovy 1.8.0
 下载地址：http://groovy.codehaus.org/Download
 
 # Google App Engine SDK
-需要安装Google App Engine SDK for Java 1.3.8
+需要安装Google App Engine SDK for Java 1.5.0
 下载地址：http://code.google.com/appengine/downloads.html
 
 
@@ -55,7 +55,11 @@ twitter {
 }}}
 替换掉你自己twitter的 username以及申请的app相关oauth参数。
 
-另外，如果你有sina微博和豆瓣账号，同样也先申请App Key，并且验证通过获得Access Token，更新如下，这个是用来同步twitter到国内账号的。如果不需要，请删除掉配置。也许下个版本，不需要再自己申请了，直接使用我提供的。
+另外，如果你有sina微博和豆瓣账号，同样也先申请App Key，并且验证通过获得Access Token，更新如下，这个是用来同步twitter到国内账号的。如果不需要，请删除掉配置。
+
+在tools目录下，提供了生成Access的Token和Secret。
+你可以修改config.properties，默认是ratte提供的，你可以修改为自己的API Key。详见目录中的README.txt。
+
 {{{
 sina {
     oauth.consumer_key = "23708456"
